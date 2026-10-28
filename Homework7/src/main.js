@@ -66,10 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((error) => {
         console.error(error);
 
-        if (error.status === 400) {
-          alert("Имя или текст комментария слишком короткие. Проверьте введённые данные.");
-        } else if (error.status === 500) {
+        if (error.status === 500) {
           alert("Ошибка сервера. Не удалось добавить комментарий. Попробуйте позже.");
+        } else if (error.status === 400) {
+          alert(error.message);
         } else if (error.status) {
           alert("Не удалось добавить комментарий. Попробуйте позже.");
         } else {
