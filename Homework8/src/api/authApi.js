@@ -4,7 +4,7 @@ const AUTH_URL = "https://wedev-api.sky.pro/api/user";
 export const login = async (login, password) => {
   const response = await fetch(AUTH_URL, {
     method: "POST",
-    body: JSON.stringify({ login, password }),
+    body: JSON.stringify({ name: login, password }),
   });
 
   let data = {};
