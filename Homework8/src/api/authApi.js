@@ -1,14 +1,17 @@
 
-const personalKey = "ilya-chu";
-const AUTH_URL = `https://wedev-api.sky.pro/api/v2/${personalKey}/user`;
+const AUTH_URL = "https://wedev-api.sky.pro/api/user/login";
 
 export const login = async (login, password) => {
   const response = await fetch(AUTH_URL, {
     method: "POST",
-    body: JSON.stringify({ login, password }),
+    body: JSON.stringify({
+      login,
+      password,
+    }),
   });
 
   let data = {};
+
   try {
     data = await response.json();
   } catch (error) {}
